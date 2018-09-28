@@ -1,0 +1,5 @@
+prompt user for key in command line to run caesar and check
+prompt user for message input in plain text
+shift each letter by key number of times
+produce cipher text output
+
