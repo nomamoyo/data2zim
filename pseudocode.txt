@@ -1,0 +1,9 @@
+check that encryption key only contains alphabetic letters
+convert each letter in key array into an integer
+store values for each letter in the key in one array
+printf cipher text:
+loop around plain text and also loop around key array
+  - both should loop through the entire length of plaintext
+  - for loop inside for loop for key array?
+
+
