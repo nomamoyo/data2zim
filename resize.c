@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
             // from my understanding, fread() cannot read padding, so the pointer is currently at the end
             // of the last pixel along old_hi.biWidth, so I just need to skip teh padding to get to
             // the new row, but somehow, I'm not getting it right. I'll come get help.
-            // I've spent at least
+            // I've spent at least 10-12 hrs on resize alone
             fseek(input, old_padding, SEEK_CUR);
         }
     }
