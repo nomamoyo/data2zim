@@ -1,0 +1,22 @@
+body
+{
+    text-align: left;
+}
+
+header
+{
+    margin-top: 10px; color: black; font-family: "Trebuchet MS";
+    font-size: 60px; font-weight: bold;
+}
+
+footer
+{
+    font-family: "Trebuchet MS"; font-size: 14px;
+}
+
+p
+{
+    font-family: "Trebuchet MS"; font-style: normal; font-size: 25px;
+    margin: 15px 30px;
+}
+
