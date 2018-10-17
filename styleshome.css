@@ -1,0 +1,74 @@
+body
+{
+    text-align: center; margin:0; padding:0; height:100%;
+}
+
+h1
+{
+    margin-top: 120px; color: white; font-family: "Trebuchet MS";
+    font-size: 100px; font-weight: bold;
+}
+
+h6
+{
+    font-style: italic; font-family: "Trebuchet MS"; font-size: 30px;
+    color: white; font-weight: bold;
+}
+
+/* div classes concept copied from https://stackoverflow.com/questions/10886927/
+split-a-page-into-2-halfstop-and-bottom solution and customized for my needs
+Background image from https://foodandnutrition.org/from-the-magazine/global-table-zimbabwe/ */
+
+/* CSS selector class */
+.top
+{
+    clear:both; position:fixed; top:0; height:50%; width:100%;
+    background-image: url("nyama2.jpg");
+    filter: contrast(120%); font-size:16px;
+    text-align:center;
+}
+
+.bottom
+{
+    clear: both; position: fixed; bottom: 0; height: 50%;
+    width: 100%; font-size: 16px; text-align: center;
+}
+
+/* CSS selector element */
+p
+{
+    font-family: "Trebuchet MS"; font-style: normal; font-size: 16px;
+    margin: 15px 30px;
+}
+
+table
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+tr
+{
+    height: 30px; text-align: center;
+}
+
+
+td
+{
+    text-align: center;
+}
+
+/* Idea came from here https://teamtreehouse.com/community/how-to-use-the-
+css3-selector-to-select-the-submit-button-in-js-file-instead-of-using-the-id-attribute-of-submit-button
+and a randomly looked up the other components on google */
+input[type=submit]
+{
+    padding:15px 15px;
+    background: orange;
+    border: 0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: "Trebuchet MS";
+    font-size: 25px;
+}
