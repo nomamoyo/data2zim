@@ -1,0 +1,46 @@
+table, th, td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table th
+{
+    background-color: #32CD32;
+    font-family: "Trebuchet MS";
+}
+
+h2
+{
+    color: black; font-family: "Trebuchet MS";
+    font-size: 40px; font-weight: bold;
+}
+
+h5
+{
+    color: black; font-family: "Trebuchet MS";
+    font-size: 25px; font-weight: bold;
+}
+
+body
+{
+    font-family: "Trebuchet MS";
+}
+
+/* copied and slightly modified code came from https://codepen.io/HTML_CSS_JavaScript/pen/QvbzmZ */
+#roundcorners
+{
+    border-radius: 25px;
+    border: 1px solid #A9A9A9;
+    padding: 20px;
+    width: 300px;
+    height: 30px;
+}
+
+#dropdown
+{
+    padding: 20px;
+    width: 300px;
+    height: 30px;
+}

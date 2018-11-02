@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h3><i>See who else has filled out the survey</i></h3>
+
+    <!-- Used a combination of lecture code and table HTML code from https://www.w3schools.com/tags/tag_table.asp -->
+    <table>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <!-- deliberately not displaying sensitive information -->
+        <th>Max. hiking distance (miles)</th>
+        <th>Can camp</th>
+        <th>Can drive</th>
+      </tr>
+      {% for hiker in hikers %}
+      <tr>
+        <!-- indexing specific locations (columns) in each list-->
+        <td>{{ hiker[0] }}</td>
+        <td>{{ hiker[1] }}</td>
+        <td>{{ hiker[5] }}</td>
+        <td>{{ hiker[6] }}</td>
+        <td>{{ hiker[7] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

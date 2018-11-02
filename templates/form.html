@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h2 class="mb-3">White Mountains Trip Survey</h2>
+    <i>Please fill out this form if you're interested in making a trip to the Whites on November 9.</i><br><br>
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <!-- form action was "/forms" -->
+    <form action="/form" method="post">
+
+        <h4><i>Personal details:</i></h4>
+        <input type="text" name="firstname" placeholder="First name" id="roundcorners">
+        <input type="text" name="lastname" placeholder="Last name" id="roundcorners"><br><br>
+        <input type="number" name="age" placeholder="Enter age in years" id="roundcorners">
+        <select name="gender" id="dropdown">
+            <option disabled selected value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="nonbinary">Non-binary</option>
+            <option value="transgender">Transgender</option>
+            <option value="notreported">Prefer not to say</option>
+        </select><br><br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+        <div class="form-group">
+            <input type="email" name="address" id="roundcorners" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">I'll only use your email communicate trip logistics.</small>
+        </div>
+
+        <h4><i>Trip details:</i></h4>
+        <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+        Select the maximum distance you're willing to hike (round trip).<br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="distance" id="short" value="4">
+            <label class="form-check-label" for="short">
+            4 miles
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="distance" id="medium" value="8">
+            <label class="form-check-label" for="medium">
+            8 miles
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="distance" id="long" value="12">
+            <label class="form-check-label" for="long">
+            12 miles
+            </label>
+        </div><br>
+
+        Are you willing to camp overnight?<br>
+        <select name="overnight">
+            <option disabled selected value=""></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        Can you drive a rental van to New Hampshire?<br>
+        <select name="drive">
+            <option disabled selected value=""></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input[name = firstname]').value) {
+                alert('Please provide your first name!');
+                return false;
+            }
+            else if (!document.querySelector('input[name = lastname]').value) {
+                alert('Please provide your last name!');
+                return false;
+            }
+            else if (!document.querySelector('input[name = address]').value) {
+                alert('Please provide your email address!');
+                return false;
+            }
+            else if (!document.querySelector('input[name = age]').value) {
+                alert('Please provide your age!');
+                return false;
+            }
+            else if (!document.querySelector('select[name = gender]').value) {
+                alert('Please select a gender!');
+                return false;
+            }
+            else if (!document.querySelector('input[name = distance]').value) {
+                alert('Please provide your preferred hiking distance!');
+                return false;
+            }
+            else if (!document.querySelector('select[name = overnight]').value) {
+                alert('Please let me know if can camp overnight!');
+                return false;
+            }
+            else if (!document.querySelector('select[name = draft]').value) {
+                alert('Please let me know if you can drive!');
+                return false;
+            }
+            return true;
+        };
+
+    </script>
+
+{% endblock %}
