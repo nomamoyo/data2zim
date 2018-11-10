@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register for account
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <!-- should I add script here to hide password? -->
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Retype password" type="password">
+        </div>
+        <!-- should I add script here to hide password confirmation? -->
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <!-- check if username exists then pass on to python to check other form inputs -->
+    <script>
+        // check if users entered all the required inputs in js
+        console.log("do you even get here?")
+        // I must block the form from actually submitting info while I check just the username? Javascript for checking other form inputs is in backup text, but right now, I'm doing it in python
+        document.querySelector('form').onsubmit = function(event) {
+            event.preventDefault();
+            // check if username already exists
+            // Bella helped me understand this check part using a Google search demo that Sean the TA showed her...
+            // url, variable: value I want to pass to python, function that I want javascript to run
+            $.get('/check', {"username": document.querySelector("input[name = username]").value}, function(checked) {
+                // the data returned is the output of the check function, i.e. "true"
+                if (checked) {
+                    document.querySelector('form').submit();
+                }
+                else {
+                    alert('Username already taken!');
+                }
+            });
+        };
+    </script>
+{% endblock %}
