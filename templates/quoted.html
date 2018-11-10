@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <main>
+        <!-- I googled how to pass parameters to a template and found this https://code-maven.com/using-templates-in-flask
+        I implemented it the same way it's done in the staff solution i.e. using a sentence instead of pulling just the three values
+        from the url quote dictionary references -->
+        A share of {{name}} ({{symbol}}) costs {{price}}.
+    </main>
+{% endblock %}
