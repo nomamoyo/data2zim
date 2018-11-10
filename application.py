@@ -96,7 +96,7 @@ def buy():
 
         # insert transaction into history table
         db.execute("INSERT INTO history (id, symbol, price, shares, tot_cost) VALUES (:id, :symbol, :price, :shares, :tot_cost)",
-                    id=session["user_id"], symbol=quote["symbol"], price=quote["price"], shares=shares2, tot_cost=cost)
+                   id=session["user_id"], symbol=quote["symbol"], price=quote["price"], shares=shares2, tot_cost=cost)
 
         # update cash based on curr_balance - cost
         # new_bal = curr_bal - cost
@@ -232,7 +232,7 @@ def register():
 
         # insert new user into database
         db.execute("INSERT INTO users (username, hash) VALUES (:username, :hashed)",
-                    username=request.form.get("username"), hashed=hashed)
+                   username=request.form.get("username"), hashed=hashed)
 
         rows = db.execute("SELECT * FROM users WHERE username = :username",
                           username=request.form.get("username"))
