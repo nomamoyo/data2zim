@@ -99,11 +99,11 @@ def buy():
                     id=session["user_id"], symbol=quote["symbol"], price=quote["price"], shares=shares2, tot_cost=cost)
 
         # update cash based on curr_balance - cost
-        new_bal = curr_bal - cost
+        # new_bal = curr_bal - cost
 
         # update users table based on https://www.w3schools.com/sql/sql_update.asp
-        # commenting this out because if doesn't work
-        # update = db.execute("UPDATE users SET cash = :new_bal WHERE id = :id", id=session["user_id"])
+        # the subtraction inspired by discourse
+        update = db.execute("UPDATE users SET cash = cash - :cost WHERE id = :id", id=session["user_id"], cost=cost)
 
         # got to main page
         return render_template("index.html")
