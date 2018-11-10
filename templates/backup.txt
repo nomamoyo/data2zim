@@ -1,0 +1,63 @@
+
+            $.get('/check', {username:username}, function(data) {
+                alert(data)
+                // the data returned is the output of the check function, do something with it, and if it's ok, submit inputs using form below
+                if(data) {
+                    document.querySelector('form').submit();
+                // the data returned is the output of the check function, do something with it
+                } else {
+
+                }
+            });
+
+            document.querySelector('form').onsubmit = function(event) {
+            event.preventDefault();
+
+            // check if users entered all the required inputs in js
+            if (!document.querySelector('input[name = username]').value) {
+                alert("Missing username");
+            }
+            else if (!document.querySelector('input[name = password]').value) {
+                alert("Missing password");
+            }
+            else if (!document.querySelector('input[name = confirmation]').value) {
+                alert('Retype your password');
+                // return apology("Retype password");
+            } else if (document.getElementsByName('password') != document.getElementsByName('confirmation')) {
+                alert("Passwords don't match");
+            }
+
+            return render_template("xndec.html", name = quote["name"], symbol = quote["symbol"], price = usd(quote["price"]))
+
+        # GIVING UP!!!
+
+        # Creating stocks to get info for index: I opened up old MS Access database I have and looked at the SQL view to figure out
+        # grouping syntax - do I even need to add comments like these?
+        rows = db.execute("SELECT symbol, shares FROM history WHERE id=:id GROUP BY symbol", id=session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
+
+        # create stocks
+        # stocks = {}
+
+        #for row in rows:
+        #    stocks[row] =
+
+        <!-- I was going to create stocks but I'm tired now
+      {% for stock in stocks %}
+      <tr>
+        indexing specific items in stocks, yet to create stocks
+        <td>{{stock.symbol}}</td>
+        <td>{{stock.name}}</td>
+        <td>{{stock.shares}}</td>
+        <td>{{stock.price}}</td>
+        <td>{{stock.total}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>{{stock.grand_tot}}</th>
+      </tr>
+    </table>
