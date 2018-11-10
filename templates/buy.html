@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register for account
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <!-- I want autocomplete on -->
+            <input autocomplete="on" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text">
+        </div>
+        <div class="form-group">
+            <!-- check if i need to specify number type and how in html -->
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}
