@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Memes</title>
+    </head>
+    <body>
+        <h1>Harvard Memes for Elitist 1% Tweens</h1>
+        <form>
+            <input autofocus autocomplete="off" name="comment" placeholder="Comment" type="text">
+            <input type="submit" value="Post">
+        </form>
+        <ul></ul>
+        <script>
+
+            const FRIENDS = {
+                'Bill Gates': 'BillGates',
+                'Mark Zuckerberg': 'zuck'
+            };
+
+            document.querySelector('form').onsubmit = function(e) {
+                e.preventDefault();
+                let comment = document.querySelector('input[name=comment]');
+                let li = '<li>' + linkify(comment.value) + '</li>';
+                document.querySelector('ul').innerHTML += li;
+                comment.value = '';
+            };
+
+            function linkify(s) {
+                // I wasn't sure where to start with this one because there's a space between the first and last name
+                // declare am empty tupple of matches between mentions in comments and users in FRIENDS, key is a user, value is 'li'
+                // it will be assigned dynamically later as link to user's profile
+                // iterate through all the users in FRIENDS and compare them to the comment
+                // if you find a match, append name to match list
+                // iterate through match tupple and append "<a href="https://www.facebook.com/BillGates">MATCHED NAME GOES HERE</a>"
+                // to each key/value pair
+                // iterate through matched tupple again, this time, as you find a user match, replace the user's name in the
+                // comment with the value in the tupple
+                // return a copy of comment where friends' names have been replaced with a link to friend’s Facebook page
+                return
+            }
+
+        </script>
+    </body>
+</html>
